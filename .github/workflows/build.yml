@@ -25,7 +25,7 @@ jobs:
 
       # 5. Upload the .app as a downloadable artifact
       - name: Upload Sudoku App
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: Sudoku.app
           path: dist/Sudoku.app
