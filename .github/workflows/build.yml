@@ -1,5 +1,6 @@
-name: Build macOS App
-on: [push]  # Runs on every git push
+name: Build Sudoku macOS App
+on: [push]  # Triggers on every git push
+
 jobs:
   build:
     runs-on: macos-latest  # Uses a free macOS runner
@@ -13,17 +14,17 @@ jobs:
         with:
           python-version: "3.9"  # Match your Python version
 
-      # 3. Install dependencies (if you have a requirements.txt)
+      # 3. Install Pygame and PyInstaller
       - name: Install dependencies
-        run: pip install -r requirements.txt pyinstaller
+        run: pip install pygame pyinstaller
 
-      # 4. Build the .app file using PyInstaller
+      # 4. Build the .app with PyInstaller
       - name: Build macOS App
         run: |
-          pyinstaller --name 'Sudoku' --windowed --icon 'icon.icns' sudoku.py
+          pyinstaller --name 'Sudoku' --windowed --icon 'sudoku.icns' sudoku.py
 
       # 5. Upload the .app as a downloadable artifact
-      - name: Upload App
+      - name: Upload Sudoku App
         uses: actions/upload-artifact@v3
         with:
           name: Sudoku.app
