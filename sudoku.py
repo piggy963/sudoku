@@ -214,21 +214,33 @@ def draw_buttons():
 
     # Draw "Easy" button
     easy_button_rect = pygame.Rect((WIDTH // 8) * 2, HEIGHT + CONTROLS_SPACE // 4, WIDTH // 4, CONTROLS_SPACE // 3)
-    pygame.draw.rect(screen, (255, 255, 255), easy_button_rect)
+    if DIFFICULTY == 30:
+        colour = (247, 243, 181)
+    else:
+        colour = (255, 255, 255)
+    pygame.draw.rect(screen, colour, easy_button_rect)
     easy_text = BUTTON_FONT.render("Easy", True, LINE_COLOUR)
     easy_text_rect = easy_text.get_rect(center=easy_button_rect.center)
     screen.blit(easy_text, easy_text_rect)
 
     # Draw "Medium" button
     medium_button_rect = pygame.Rect((WIDTH // 8) * 4, HEIGHT + CONTROLS_SPACE // 4, WIDTH // 4, CONTROLS_SPACE // 3)
-    pygame.draw.rect(screen, (255, 255, 255), medium_button_rect)
+    if DIFFICULTY == 45:
+        colour = (247, 243, 181)
+    else:
+        colour = (255, 255, 255)
+    pygame.draw.rect(screen, colour, medium_button_rect)
     medium_text = BUTTON_FONT.render("Medium", True, LINE_COLOUR)
     medium_text_rect = medium_text.get_rect(center=medium_button_rect.center)
     screen.blit(medium_text, medium_text_rect)
 
     # Draw "Hard" button
     hard_button_rect = pygame.Rect((WIDTH // 8) * 6, HEIGHT + CONTROLS_SPACE // 4, WIDTH // 4, CONTROLS_SPACE // 3)
-    pygame.draw.rect(screen, (255, 255, 255), hard_button_rect)
+    if DIFFICULTY == 60:
+        colour = (247, 243, 181)
+    else:
+        colour = (255, 255, 255)
+    pygame.draw.rect(screen, colour, hard_button_rect)
     hard_text = BUTTON_FONT.render("Hard", True, LINE_COLOUR)
     hard_text_rect = hard_text.get_rect(center=hard_button_rect.center)
     screen.blit(hard_text, hard_text_rect)
