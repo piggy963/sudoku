@@ -21,6 +21,7 @@ jobs:
       # 4. Build the .app with PyInstaller
       - name: Build macOS App
         run: |
+          export ARCHFLAGS="-arch x86_64"
           pyinstaller --name 'Sudoku' --windowed --icon 'sudoku.icns' sudoku.py
 
       # 5. Upload the .app as a downloadable artifact
